@@ -1,0 +1,26 @@
+.hero-footer {
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    color: var(--secondary-color);
+}
+
+.social-media-icon {
+    color: var(--secondary-color);
+    border: 2px solid var(--primary-color);
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.social-media-icon:hover {
+    border-bottom: 2px solid var(--gold);
+}
+
+.footer-credits {
+    text-decoration: none;
+    color: var(--gold);
+    font-weight: bold;
+}
