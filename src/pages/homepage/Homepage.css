@@ -1,0 +1,21 @@
+.main-container {
+    display: flex;
+    padding: 5rem;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5rem;
+}
+
+.hero-img {
+    width: 50%;
+}
+
+.hero-heading {
+    font-size: 4rem;
+    margin: 0;
+}
+
+.hero-desc {
+    font-size: 1.5rem;
+}
