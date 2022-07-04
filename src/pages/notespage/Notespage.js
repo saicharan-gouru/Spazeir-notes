@@ -1,9 +1,10 @@
 import "./Notespage.css";
+import {NoteEditor} from "../../components";
 
 function Notespage(){
     return(
-        <div>
-            <h1>Notes page</h1>
+        <div className="notes-page">
+           <NoteEditor/>
         </div>
     )
 }
