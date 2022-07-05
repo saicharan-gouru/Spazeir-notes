@@ -1,3 +1,4 @@
 import { noteReducer } from "./noteReducer";
+import { notesReducer } from "./notesReducer";
 
-export { noteReducer };
+export { noteReducer, notesReducer };
