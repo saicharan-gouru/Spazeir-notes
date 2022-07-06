@@ -1,10 +1,6 @@
-.notes-page {
-    padding: 2rem;
-}
-
 .notes-nav-bar {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     justify-content: center;
     align-items: center;
     padding: 2rem;
@@ -15,6 +11,13 @@
     color: black;
     font-weight: bold;
     font-size: 1rem;
+    padding: 10px;
+    border-bottom: 2px solid white;
+}
+
+.nav-link:hover,
+.active {
+    border-bottom: 2px solid var(--primary-color);
 }
 
 .note-container {
@@ -39,4 +42,8 @@
     margin: 0.5rem;
     padding: 0.5rem;
     border-radius: 2rem;
+}
+
+.icon-notes {
+    cursor: pointer;
 }
