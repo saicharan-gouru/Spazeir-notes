@@ -1,0 +1,42 @@
+.notes-page {
+    padding: 2rem;
+}
+
+.notes-nav-bar {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.note-container {
+    width: 40%;
+    border: 2px solid var(--primary-color);
+    border-radius: 2rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.notes-container {
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+}
+
+.note-text {
+    background-color: white;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 2rem;
+}
