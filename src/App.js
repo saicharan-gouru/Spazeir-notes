@@ -1,6 +1,6 @@
 import "./App.css";
 import { Route, Routes } from 'react-router-dom';
-import {Homepage,Notespage,Trashpage} from "./pages";
+import {Homepage,Notespage,Trashpage,Archivepage} from "./pages";
 import {Navbar,Footer,ScrollToTop} from "./components";
 
 
@@ -14,6 +14,7 @@ function App() {
           <Route path="/" element={<Homepage/>} />
           <Route path="/notes" element={<Notespage/>} />
           <Route path="/trash" element={<Trashpage/>} />
+          <Route path="/archive" element={<Archivepage/>} />
       </Routes>
       </ScrollToTop>
       <Footer/>

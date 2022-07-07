@@ -23,12 +23,16 @@ function Notespage(){
            {notes.length===0 && <h1>No notes here...</h1>}
            {
             notes.map(note => 
+            <div>
+            <span className="label"><b>Label: </b>{note.label} <b>Priority: </b>{note.priority}</span>
             <div className="note-container" style={{backgroundColor:note.bgcolor}}>
                 <p className="note-text"><b>Title:</b>{note.title}</p>
                 <p className="note-text"><b>Description:</b>{note.description}</p>
-                <div>
+                <div className="white-bg single-note-features">
                     <BsFillTrashFill className="icon-notes" onClick={()=>notesDispatch({type:"DELETE_NOTE",payload:{title:note.title,description:note.description,bgcolor:note.bgcolor,label:note.label,priority:note.priority}})}/>
+                    <BiArchiveIn className="icon-notes" onClick={()=>notesDispatch({type:"ARCHIVE_NOTE",payload:{title:note.title,description:note.description,bgcolor:note.bgcolor,label:note.label,priority:note.priority}})}/>
                 </div>
+            </div>
             </div>
             )
            }

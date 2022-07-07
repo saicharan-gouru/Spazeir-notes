@@ -14,7 +14,7 @@ function Footer(){
                 <a href="https://github.com/saicharan-gouru/" target="_blank" rel="noopener noreferrer"><AiFillGithub className="social-media-icon" style={{ fontSize: "30px" }} /></a>
             </div>
             <p>Made with 💖 by  <a className="footer-credits" href="https://saicharangouru.netlify.app" target="_blank" rel="noopener noreferrer"> Saicharan Gouru </a></p>
-            <small>ⓒ Boolean Quizzo | 2022</small>
+            <small>ⓒ Spazeir notes | 2022</small>
          </footer>
     </div>
     );
