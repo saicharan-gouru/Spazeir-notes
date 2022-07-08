@@ -3,7 +3,7 @@ import {useNote,useNotes} from "../../contexts";
 
 function NoteEditor(){
 
-    const {noteDispatch,bgcolor,title,description,label,priority} = useNote();
+    const {noteDispatch,bgcolor,title,description,label,priority,isEdit} = useNote();
     const {notesDispatch} =useNotes();
 
     return(
@@ -18,7 +18,7 @@ function NoteEditor(){
                     <label>Priority</label>
                     <label><input type="radio" name="priority" onChange={(e)=>noteDispatch({type:"PRIORITY",payload:"high"})} />High</label>
                     <label><input type="radio" name="priority" onChange={(e)=>noteDispatch({type:"PRIORITY",payload:"low"})} />Low</label>
-                    <button className="button primary-blue" onClick={()=>{notesDispatch({type:"ADD_NOTE",payload:{title:title,description:description,bgcolor:bgcolor,label:label,priority:priority}}); noteDispatch({ type: "RESET" })}}>Add note</button>
+                    <button className="button primary-blue" onClick={()=>{notesDispatch({type:"ADD_NOTE",payload:{title:title,description:description,bgcolor:bgcolor,label:label,priority:priority}}); noteDispatch({ type: "RESET" })}}>{isEdit ? "update note" : "Add note"}</button>
                     <button className="button primary-yellow" onClick={()=>noteDispatch({type:"RESET"})}>Reset</button>
                 </div>
             </div>

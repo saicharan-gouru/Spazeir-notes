@@ -5,10 +5,10 @@ const NoteContext = createContext();
 
 function NoteProvider({children}){
 
-    const [{title,description,bgcolor,label,priority},noteDispatch] = useReducer(noteReducer,{title:"",description:"",bgcolor:"",label:"",priority:""});
+    const [{title,description,bgcolor,label,priority,isEdit},noteDispatch] = useReducer(noteReducer,{title:"",description:"",bgcolor:"",label:"",priority:"",isEdit:"false"});
     
     return(
-        <NoteContext.Provider value={{noteDispatch,title,description,bgcolor,label,priority}}>
+        <NoteContext.Provider value={{noteDispatch,title,description,bgcolor,label,priority,isEdit}}>
             {children}
         </NoteContext.Provider>
     )

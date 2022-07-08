@@ -1,14 +1,17 @@
 import "./Notespage.css";
 import {NoteEditor} from "../../components";
 import {Link} from "react-router-dom";
-import {useNotes} from "../../contexts";
-import {AiFillHome} from "react-icons/ai";
+import {useNotes,useNote} from "../../contexts";
+import {AiFillHome,AiFillEdit} from "react-icons/ai";
 import {BiArchiveIn,BiLabel} from "react-icons/bi";
 import {BsFillTrashFill} from "react-icons/bs";
 
 
+
 function Notespage(){
     const {notes,notesDispatch} = useNotes();
+    const {noteDispatch} = useNote();
+
     return(
         <div className="notes-page">
             <div className="notes-nav-bar">
@@ -37,8 +40,10 @@ function Notespage(){
                 <div className="white-bg single-note-features">
                     <BsFillTrashFill className="icon-notes" onClick={()=>notesDispatch({type:"DELETE_NOTE",payload:{title:note.title,description:note.description,bgcolor:note.bgcolor,label:note.label,priority:note.priority}})}/>
                     <BiArchiveIn className="icon-notes" onClick={()=>notesDispatch({type:"ARCHIVE_NOTE",payload:{title:note.title,description:note.description,bgcolor:note.bgcolor,label:note.label,priority:note.priority}})}/>
+                    <AiFillEdit className="icon-notes" onClick={()=>{noteDispatch({type:"SET_EDIT_DETAILS",payload:{title:note.title,description:note.description,bgcolor:note.bgcolor,label:note.label,priority:note.priority}});notesDispatch({type:"DELETE_NOTE",payload:{title:note.title,description:note.description,bgcolor:note.bgcolor,label:note.label,priority:note.priority}})}}/>
                 </div>
             </div>
+            
             </div>
             )
            }
