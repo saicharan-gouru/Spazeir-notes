@@ -23,6 +23,7 @@ function Trashpage(){
                     <div className="note-container" style={{backgroundColor:note.bgcolor}}>
                         <p className="note-text"><b>Title:</b>{note.title}</p>
                         <p className="note-text"><b>Description:</b>{note.description}</p>
+                        <button className="button primary-green" onClick={()=>notesDispatch({type:"RESTORE",payload:{title:note.title,description:note.description,bgcolor:note.bgcolor,label:note.label,priority:note.priority}})}>Restore</button>
                     </div>
                     )
                 }

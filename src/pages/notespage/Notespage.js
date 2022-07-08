@@ -20,6 +20,12 @@ function Notespage(){
            <NoteEditor/>
            <div className="notes-container">
             <h2>Existing notes <button className="button primary-red" onClick={()=>notesDispatch({type:"CLEAR_ALL"})}>Clear all</button></h2>
+           <div>
+            <p>Priority filter</p>
+            <label>All</label><input onClick={()=>notesDispatch({type:"FILTER_ALL"})} type="radio" name="filter" />
+            <label>High</label><input onClick={()=>notesDispatch({type:"FILTER_HIGH_PRIORITY"})} type="radio" name="filter" />
+            <label>Low</label><input onClick={()=>notesDispatch({type:"FILTER_LOW_PRIORITY"})} type="radio" name="filter" />
+           </div>
            {notes.length===0 && <h1>No notes here...</h1>}
            {
             notes.map(note => 
