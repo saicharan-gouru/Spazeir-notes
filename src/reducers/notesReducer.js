@@ -1,7 +1,7 @@
 function notesReducer(state, { type, payload }) {
     switch (type) {
         case "ADD_NOTE":
-            return {...state, notes: [...state.notes, payload], notesCopy: [...state.notes, payload] }
+            return {...state, notes: [...state.notes, payload], notesCopy: [...state.notes, payload], labels: [...new Set([...state.labels, payload.label])] }
         case "CLEAR_ALL":
             return {...state, notes: [], notesCopy: [] }
         case "DELETE_NOTE":
@@ -22,6 +22,9 @@ function notesReducer(state, { type, payload }) {
             return {...state, notes: state.notesCopy.filter(item => item.priority === "high") }
         case "FILTER_LOW_PRIORITY":
             return {...state, notes: state.notesCopy.filter(item => item.priority === "low") }
+        case "DELETE_NOTE_TO_EDIT":
+            return {...state, notes: state.notes.filter(item => item.title !== payload.title), archive: state.archive.filter(item => item.title !== payload.title), notesCopy: state.notes.filter(item => item.title !== payload.title) }
+
         default:
             return state;
 
