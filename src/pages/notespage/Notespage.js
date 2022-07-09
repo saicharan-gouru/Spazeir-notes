@@ -23,11 +23,18 @@ function Notespage(){
            <NoteEditor/>
            <div className="notes-container">
             <h2>Existing notes <button className="button primary-red" onClick={()=>notesDispatch({type:"CLEAR_ALL"})}>Clear all</button></h2>
-           <div>
-            <p>Priority filter</p>
-            <label>All</label><input onClick={()=>notesDispatch({type:"FILTER_ALL"})} type="radio" name="filter" />
-            <label>High</label><input onClick={()=>notesDispatch({type:"FILTER_HIGH_PRIORITY"})} type="radio" name="filter" />
-            <label>Low</label><input onClick={()=>notesDispatch({type:"FILTER_LOW_PRIORITY"})} type="radio" name="filter" />
+           <div className="filters-container">
+            <div className="filter">
+                <p>Priority filter</p>
+                <label><input onClick={()=>notesDispatch({type:"FILTER_ALL"})} type="radio" name="filter" />All</label>
+                <label><input onClick={()=>notesDispatch({type:"FILTER_HIGH_PRIORITY"})} type="radio" name="filter" />High</label>
+                <label><input onClick={()=>notesDispatch({type:"FILTER_LOW_PRIORITY"})} type="radio" name="filter" />Low</label>
+            </div>
+            <div className="filter">
+                <p>Sort by priority</p>
+                <label><input onClick={()=>notesDispatch({type:"SORT_LOW_TO_HIGH"})} type="radio" name="sort-by-priority" /> low to high</label>
+                <label><input onClick={()=>notesDispatch({type:"SORT_HIGH_TO_LOW"})} type="radio" name="sort-by-priority" /> high to low</label>
+            </div>
            </div>
            {notes.length===0 && <h1>No notes here...</h1>}
            {
