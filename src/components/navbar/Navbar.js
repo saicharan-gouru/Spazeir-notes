@@ -1,16 +1,18 @@
 import "./Navbar.css";
 import {Link,useNavigate} from "react-router-dom";
-import {useAuth} from "../../contexts";
+import {useAuth,useNotes} from "../../contexts";
 
 function Navbar(){
 
     const {user,setUser} = useAuth();
     const navigate = useNavigate();
+    const {notesDispatch} = useNotes();
 
     const logoutHandler = () => {
         localStorage.removeItem("token");
         setUser(null);
         navigate("/");
+        notesDispatch({type:"RESET"})
       };
 
     return(
