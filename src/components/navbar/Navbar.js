@@ -17,7 +17,7 @@ function Navbar(){
         <div className="nav-bar">
            <Link to="/" className="title">Spazeir Notes</Link>
            <Link to="/notes" className="categories"><h3>Notes</h3></Link> 
-           {user ? <button onClick={logoutHandler}>Logout</button> : <button><Link to="/login">Login</Link></button>}
+           {user ? <button className="button primary-red" onClick={logoutHandler}>Logout</button> : <Link to="/login"><button className="button primary-green">Login/Signup</button></Link>}
         </div>
     );
 }
