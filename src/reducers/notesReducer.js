@@ -28,6 +28,8 @@ function notesReducer(state, { type, payload }) {
             return {...state, notes: [...state.notes.filter(item => item.priority === "low"), ...state.notes.filter(item => item.priority === "high")] }
         case "SORT_HIGH_TO_LOW":
             return {...state, notes: [...state.notes.filter(item => item.priority === "high"), ...state.notes.filter(item => item.priority === "low")] }
+        case "RESET":
+            return {...state, notes: [], trash: [], archive: [], labels: [], notesCopy: [] }
         default:
             return state;
 
